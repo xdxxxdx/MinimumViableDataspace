@@ -67,6 +67,8 @@ public class SecretsExtension implements ServiceExtension {
 
             vault.storeSecret(context.getConfig().getString(STS_PRIVATE_KEY_ALIAS), privateKey);
             vault.storeSecret(context.getConfig().getString(STS_PUBLIC_KEY_ID), publicKey);
+            System.out.print(publicKey + context.getConfig().getString(STS_PUBLIC_KEY_ID));
+            System.out.print(privateKey + context.getConfig().getString(STS_PRIVATE_KEY_ALIAS));
 
             context.getMonitor().withPrefix("DEMO").warning(">>>>>> This extension hard-codes a keypair into the vault! <<<<<<");
         }
